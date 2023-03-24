@@ -2,7 +2,9 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
-import Dashboard from "../Pages/Dashboard/dashboard";
+import AddVoterInfo from "../Pages/Dashboard/AddVoterInfo";
+import SearchVoterStatus from "../Pages/Dashboard/SearchVoterStatus";
+import VotersInfo from "../Pages/Dashboard/VotersInfo";
 
 import Home from "../Pages/Home";
 import Login from "../Pages/Login/Login";
@@ -44,9 +46,17 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        path: "/dashboard/voters-info",
+        element: <VotersInfo/>
       },
+      {
+        path : "/dashboard/add-voter-info",
+        element : <AddVoterInfo/>
+      },
+      {
+        path : "/dashboard/search-voter-status",
+        element : <SearchVoterStatus/>
+      }
     ],
   },
 ]);

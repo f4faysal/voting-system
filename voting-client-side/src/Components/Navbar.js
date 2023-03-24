@@ -29,7 +29,7 @@ const Navbar = () => {
         </label> */}
 
         <div className="flex">
-        <label
+          <label
             htmlFor="my-drawer-2"
             className=" lg:hidden relative z-10 block p-2 text-gray-700 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40  focus:ring-blue-300  focus:ring  focus:outline-none"
           >
