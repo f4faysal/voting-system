@@ -14,11 +14,13 @@ const Navbar = () => {
           className="flex title-font font-medium items-center text-transparent bg-clip-text bg-gradient-to-r from-black to-red-500 mb-4 md:mb-0"
         >
           <span className="">
-            <img
+            {/* <img
               className="w-1/3"
               src="https://studyin.com.au/wp-content/uploads/2022/11/studyin-web-logo.png"
               alt=""
-            />
+            /> */}
+            <h1 className="text-2xl">Voting System</h1>
+            
           </span>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">

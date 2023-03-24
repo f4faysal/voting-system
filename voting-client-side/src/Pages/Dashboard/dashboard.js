@@ -1,10 +1,9 @@
-import React from "react";
-import BasickTabile from "./BasickTabile";
+import React from 'react';
 
 const dashboard = () => {
   return (
-    <div className="h-screen flex justify-center">
-      <BasickTabile></BasickTabile>
+    <div>
+      
     </div>
   );
 };
