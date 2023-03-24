@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Database Connection /umfWExgBgWy6Itxj
 const uri =
-  "mongodb+srv://techtocloud:umfWExgBgWy6Itxj@cluster0.sawjoqx.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://voting-system:J5c8aKNHu3uCtbEz@cluster0.sawjoqx.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -45,16 +45,16 @@ async function run() {
     /**=======================================
                      mongodb start 
       ======================================*/
-    const userCollection = client.db("techtocloud").collection("users");
+    const votersCollection = client.db("votingsystem").collection("voters");
 
     /**=======================================
                        mongodb End 
       ======================================*/
-    app.get("/users", async (req, res) => {
+    app.get("/voters", async (req, res) => {
       const query = {};
-      const cursor = userCollection.find(query);
-      const users = await cursor.toArray();
-      res.send(users);
+      const cursor = votersCollection.find(query);
+      const voters = await cursor.toArray();
+      res.send(voters);
     });
   } finally {
   }
@@ -63,7 +63,7 @@ async function run() {
 run().catch((err) => console.error(err));
 
 app.get("/", async (req, res) => {
-  res.send("Techtocloud is running ....");
+  res.send("VotingSystem is running ....");
 });
 
-app.listen(port, () => console.log(`Techtocloud running on ${port}`));
+app.listen(port, () => console.log(`VotingSystem running on ${port}`));
