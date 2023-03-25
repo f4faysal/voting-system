@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="hero min-h-screen bg-base-100 ">
       <div className="hero-content flex-col lg:flex-row-reverse ">
-        <div className=" flex justify-evenly w-1/2">
+        <div className="flex flex-col md:flex-row justify-evenly lg:w-1/2 gap-4 ">
           <div
             className="radial-progress bg-green-100 text-green-600"
             style={{
@@ -40,7 +40,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <h1 className="text-5xl font-bold w-full ">Voting System</h1>
           <p className="py-6 ">
             {`The total 400 registered voters 2023. Custom voter identification and checking the presence of all Bangladeshi votes in Italy`}

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
-import wriwerIcon from "../img/external.svg";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -29,16 +28,7 @@ const Navbar = () => {
         </label> */}
 
         <div className="flex">
-          <label
-            htmlFor="my-drawer-2"
-            className=" lg:hidden relative z-10 block p-2 text-gray-700 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40  focus:ring-blue-300  focus:ring  focus:outline-none"
-          >
-            <img
-              className="h-5 w-5"
-              src={wriwerIcon}
-              alt="Girl in a jacket"
-            ></img>
-          </label>
+        
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             {user?.email ? (
               <>
