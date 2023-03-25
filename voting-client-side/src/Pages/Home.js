@@ -46,11 +46,26 @@ const Home = () => {
             {`The total 400 registered voters 2023. Custom voter identification and checking the presence of all Bangladeshi votes in Italy`}
           </p>
 
-          <PrimaryButton classes="w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100">
-            <Link to={"/dashboard/search-voter-status"}>
+          <PrimaryButton classes=" flex px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100">
+            <Link className="px-4" to={"/dashboard/search-voter-status"}>
               Search Voter Status{" "}
             </Link>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
           </PrimaryButton>
+
         </div>
       </div>
     </div>

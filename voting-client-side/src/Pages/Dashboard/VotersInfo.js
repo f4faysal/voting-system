@@ -1,10 +1,13 @@
 import React from "react";
+import DashbordNavbar from "../../Components/DashbordNavbar";
 
 const VotersInfo = () => {
   return (
-    
+    <>
+      <DashbordNavbar></DashbordNavbar>
+
       <div className="overflow-x-auto">
-        <table className="table table-compact ">
+        <table className="table w-full table-auto border-collapse border border-slate-400">
           <thead>
             <tr>
               <th></th>
@@ -14,7 +17,6 @@ const VotersInfo = () => {
               <th>voter_id</th>
               <th>gender</th>
               <th>viter_status</th>
-           
             </tr>
           </thead>
           <tbody>
@@ -203,16 +205,16 @@ const VotersInfo = () => {
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>company</th>
-              <th>location</th>
-              <th>Last Login</th>
-              <th>Favorite Color</th>
+              <th>Addresh</th>
+              <th>Barth</th>
+              <th>voter_id</th>
+              <th>gender</th>
+              <th>viter_status</th>
             </tr>
           </tfoot>
         </table>
       </div>
-   
+    </>
   );
 };
 
