@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import DashbordNavbar from "../../Components/DashbordNavbar";
+import Spinner from "../../Components/Spinner/Spinner";
 import VoterTable from "./VoterTable";
 
 const VotersInfo = () => {
@@ -14,20 +15,9 @@ const VotersInfo = () => {
       ),
   });
 
-  // const [apiData, setApiData] = useState([]);
-
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await fetch("http://localhost:5000/voters");
-  //     const json = await response.json();
-  //     setData(json);
-  //   }
-  //   fetchData();
-  // }, []);
-
-  // console.log(data);
+  if(isLoading){
+    return <Spinner></Spinner>
+  }
 
   return (
     <>
