@@ -1,10 +1,11 @@
+import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import Barcode from "react-barcode";
 
 const PrintCardModal = () => {
   return (
     <div>
       {/* The button to open modal */}
-        
 
       {/* Put this part before </body> tag */}
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
@@ -19,10 +20,14 @@ const PrintCardModal = () => {
           <h3 className="text-lg font-bold">
             Congratulations random Internet user!
           </h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <div className="flex justify-center items-center h-56">
+            <Barcode className="" value="barcode-example" />;
+          </div>
+
+          <button className="btn btn-outline hover:text-white">
+            {" "}
+            <ArrowDownTrayIcon className="h-4 w-4" />
+          </button>
         </div>
       </div>
     </div>
