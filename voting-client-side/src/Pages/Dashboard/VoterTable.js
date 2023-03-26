@@ -1,11 +1,13 @@
 import { TrashIcon } from "@heroicons/react/24/solid";
 import React from "react";
-
+import "./voterscss.css";
 const VoterTable = ({ voter }) => {
   return (
     <tr>
-      <th className="border border-slate-300">{voter.voter_id}</th>
-      <td className="border border-slate-300">{voter.first_name}</td>
+      <th className="border border-slate-300 ">{voter.voter_id}</th>
+      <td className="border border-slate-300 page">
+        {voter.first_name} <span className="fold"></span>
+      </td>
       <td className="border border-slate-300">{voter.address}</td>
       <td className="border border-slate-300">{voter.det_of_barth}</td>
       <td className="border border-slate-300">{voter._id}</td>

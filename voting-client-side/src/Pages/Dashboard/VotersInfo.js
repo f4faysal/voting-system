@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import DashbordNavbar from "../../Components/DashbordNavbar";
 import Spinner from "../../Components/Spinner/Spinner";
+
 import VoterTable from "./VoterTable";
 
 const VotersInfo = () => {
@@ -12,7 +13,9 @@ const VotersInfo = () => {
   } = useQuery({
     queryKey: ["voters"],
     queryFn: () =>
-      fetch(`https://voting-server-side-f4faysal.vercel.app/voters`).then((res) => res.json()),
+      fetch(`https://voting-server-side-f4faysal.vercel.app/voters`).then(
+        (res) => res.json()
+      ),
   });
 
   if (isLoading) {
