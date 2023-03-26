@@ -5,19 +5,23 @@ import Spinner from "../../Components/Spinner/Spinner";
 import VoterTable from "./VoterTable";
 
 const VotersInfo = () => {
-
-
-  const { data: voters = [] , refetch , isLoading} = useQuery({
-    queryKey: ['voters'],
+  const {
+    data: voters = [],
+    refetch,
+    isLoading,
+  } = useQuery({
+    queryKey: ["voters"],
     queryFn: () =>
-      fetch(`http://localhost:5000/voters`).then((res) =>
-        res.json()
-      ),
+      fetch(`http://localhost:5000/voters`).then((res) => res.json()),
   });
 
-  if(isLoading){
-    return <Spinner></Spinner>
+  if (isLoading) {
+    return <Spinner></Spinner>;
   }
+
+  voters.sort((a, b) => b.voter_id - a.voter_id);
+
+  console.log(voters);
 
   return (
     <>
@@ -38,8 +42,8 @@ const VotersInfo = () => {
             </tr>
           </thead>
           <tbody>
-            {voters.map((voter , i ) => (
-              <VoterTable voter={voter} key={i} ></VoterTable>
+            {voters.map((voter, i) => (
+              <VoterTable voter={voter} key={i}></VoterTable>
             ))}
           </tbody>
           <tfoot>
