@@ -1,29 +1,33 @@
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import DashbordNavbar from "../../Components/DashbordNavbar";
+import VoterTable from "./VoterTable";
 
 const VotersInfo = () => {
-  // const { data: voters = [] , refetch , isLoading} = useQuery({
-  //   queryKey: ['voters'],
-  //   queryFn: () =>
-  //     fetch(`http://localhost:5000/voters`).then((res) =>
-  //       res.json()
-  //     ),
-  // });
+
+
+  const { data: voters = [] , refetch , isLoading} = useQuery({
+    queryKey: ['voters'],
+    queryFn: () =>
+      fetch(`http://localhost:5000/voters`).then((res) =>
+        res.json()
+      ),
+  });
 
   // const [apiData, setApiData] = useState([]);
 
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("http://localhost:5000/voters");
-      const json = await response.json();
-      setData(json);
-    }
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const response = await fetch("http://localhost:5000/voters");
+  //     const json = await response.json();
+  //     setData(json);
+  //   }
+  //   fetchData();
+  // }, []);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
@@ -43,16 +47,8 @@ const VotersInfo = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((voter) => (
-              <tr>
-                <th>{voter.voter_id}</th>
-                <td>{voter.first_name}</td>
-                <td>{voter.address}</td>
-                <td>{voter.det_of_barth}</td>
-                <td>{voter._id}</td>
-                <td>{voter.gender}</td>
-                <td>{voter.viter_status ? "Yes" : "No"}</td>
-              </tr>
+            {voters.map((voter , i ) => (
+              <VoterTable voter={voter} key={i} ></VoterTable>
             ))}
           </tbody>
           <tfoot>
