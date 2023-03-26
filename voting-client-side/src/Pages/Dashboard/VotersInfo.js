@@ -34,6 +34,7 @@ const VotersInfo = () => {
               <th>voter_id</th>
               <th>gender</th>
               <th>viter_status</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -50,6 +51,7 @@ const VotersInfo = () => {
               <th>voter_id</th>
               <th>gender</th>
               <th>viter_status</th>
+              <th></th>
             </tr>
           </tfoot>
         </table>
