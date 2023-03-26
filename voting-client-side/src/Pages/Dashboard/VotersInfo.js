@@ -12,7 +12,7 @@ const VotersInfo = () => {
   } = useQuery({
     queryKey: ["voters"],
     queryFn: () =>
-      fetch(`http://localhost:5000/voters`).then((res) => res.json()),
+      fetch(`https://voting-server-side-f4faysal.vercel.app/voters`).then((res) => res.json()),
   });
 
   if (isLoading) {
