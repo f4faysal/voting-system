@@ -1,11 +1,38 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Link } from "react-router-dom";
 import wriwerIcon from "../img/external.svg";
+import Spinner from "./Spinner/Spinner";
 
 const DashbordNavbar = () => {
+  const {
+    data: voters = [],
+    refetch,
+    isLoading,
+  } = useQuery({
+    queryKey: ["voters"],
+    queryFn: () =>
+      fetch(`https://voting-server-side-f4faysal.vercel.app/voters`).then(
+        (res) => res.json()
+      ),
+  });
+
+  if (isLoading) {
+    return <Spinner></Spinner>;
+  }
+
+  const totalVoter = voters.length;
+
+  const totalVotedVoter = voters.filter(
+    (voter) => voter.viter_status === true
+  ).length;
+
+  const totalUnVotedVoter = voters.filter(
+    (voter) => voter.viter_status === false
+  ).length;
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-1">
+      <div className="flex-1 gap-4">
         <div className="form-control">
           <div className="input-group">
             <input
@@ -31,6 +58,37 @@ const DashbordNavbar = () => {
             </button>
           </div>
         </div>
+
+        <div className="tabs">
+          <Link
+            to={"/dashboard/voters-info"}
+            className="tab tab-lifted tab-active"
+          >
+            All Voters
+          </Link>
+          <Link to={"/dashboard/voted-voter"} className="tab tab-lifted ">
+            {" "}
+            Voted Voter{" "}
+          </Link>
+          <Link
+            to={"/dashboard/unvoted-voter"}
+            className="tab tab-lifted tab-active"
+          >
+            UnVoted Voter
+          </Link>
+        </div>
+
+        <ul className="steps">
+          <li data-content={totalVoter} className="step step-warning ">
+            Total
+          </li>
+          <li data-content={totalVotedVoter} className="step step-success">
+            Voted
+          </li>
+          <li data-content={totalUnVotedVoter} className="step step-error">
+            UnVoted
+          </li>
+        </ul>
       </div>
       <div className="flex-none gap-2">
         <label

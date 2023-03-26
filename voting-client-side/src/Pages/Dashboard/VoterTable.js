@@ -1,4 +1,4 @@
-import { TrashIcon } from "@heroicons/react/24/solid";
+import { EyeIcon, TrashIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import "./voterscss.css";
 const VoterTable = ({ voter }) => {
@@ -34,8 +34,11 @@ const VoterTable = ({ voter }) => {
 
       <td className="p-0 text-center  ">
         <button className="btn btn-ghost">
-          <TrashIcon className="h-6 w-6 text-blue-500" />
+          <TrashIcon className="h-4 w-4 text-black" />
         </button>
+        <label htmlFor="my-modal-3" className="btn btn-ghost">
+          <EyeIcon className="h-4 w-4 text-green-600" />
+        </label>
       </td>
     </tr>
   );

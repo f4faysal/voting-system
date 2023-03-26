@@ -4,6 +4,8 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
 import AddVoterInfo from "../Pages/Dashboard/AddVoterInfo";
 import SearchVoterStatus from "../Pages/Dashboard/SearchVoterStatus";
+import UnVotedVoter from "../Pages/Dashboard/UnVotedVoter";
+import VotedVoter from "../Pages/Dashboard/VotedVoter";
 import VotersInfo from "../Pages/Dashboard/VotersInfo";
 
 import Home from "../Pages/Home";
@@ -47,16 +49,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard/voters-info",
-        element: <VotersInfo/>
+        element: <VotersInfo />,
       },
       {
-        path : "/dashboard/add-voter-info",
-        element : <AddVoterInfo/>
+        path: "/dashboard/add-voter-info",
+        element: <AddVoterInfo />,
       },
       {
-        path : "/dashboard/search-voter-status",
-        element : <SearchVoterStatus/>
-      }
+        path: "/dashboard/search-voter-status",
+        element: <SearchVoterStatus />,
+      },
+      {
+        path: "/dashboard/unvoted-voter",
+        element: <UnVotedVoter />,
+      },
+      {
+        path: "/dashboard/voted-voter",
+        element: <VotedVoter />,
+      },
     ],
   },
 ]);
