@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import DashbordNavbar from "../../Components/DashbordNavbar";
 import Spinner from "../../Components/Spinner/Spinner";
+import PrintCardModal from "../PrintCard/PrintCardModal";
 
 import VoterTable from "./VoterTable";
 
@@ -62,6 +63,8 @@ const VotersInfo = () => {
             </tr>
           </tfoot>
         </table>
+
+        <PrintCardModal></PrintCardModal>
       </div>
     </>
   );
